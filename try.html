@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<script>
+function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var passwordPattern = /^\d{6}$/;
+    
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+    
+    if (!passwordPattern.test(password)) {
+        alert("Password should contain 6 digits only.");
+        return false;
+    }
+    
+    return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+    <label for="email">Email:</label><br>
+    <input type="text" id="email" name="email"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+<html>
+    <head><script type="text/javascript" src="validate.js"></script>
+        <title>Registration Page</title>
+    </head>
+    <body>
+        <h1 style ="text-align: center; background-color:brown"> Registration Page</h1>
+        <center>
+            <form onsubmit="return validateForm()">
+                <table>
+                    <tr><td>Name: </td><td><input type="text" id="a1" placeholder="enter your name" ></td></tr>
+                    <tr><td>Password:</td>
+                        <input type="password" id="password" name="password"></td></tr>
+                        <input type="submit" value="Submit"></td></tr>
+                    <tr><td>Sex:</td><td>Male<input type="radio" name="male"></td>
+                                   <td>Female<input type="radio" name="female"></td></tr>
+             ``       <tr><td>Date: </td><td><input type="date" name="mydate" ></td></tr>
+                    <tr><td>Email: </td><td>
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email"></td></tr>
+                    <tr><td>Phone: </td><td><input type="number" placeholder="enter valid number" onclick="validateForm"></td></tr>
+                    <tr><td>Languages:</td>
+                            <td><input type="checkbox" name="lang" id="1">English</td>
+                            <td><input type="checkbox" name="lang" id="2">Telugu</td>
+                            <td><input type="checkbox" name="lang" id="3">Hindi</td>
+                            <td><input type="checkbox" name="lang" id="4">Tamil</td></tr>
+                        <tr><td>Educational Qualification:</td><td><p>
+                            <select name="---select---" id="se"required>
+                                <option value="HIGHSCHOOL" id="se1">HIGH SCHOOL</option>
+                                <option value="INTERMEDIATE" id="se2">INTERMEDIATE</option>
+                                <option value="GRADUATION" id="se3">GRADUATION</option>
+                            </select>
+                        </p></td></tr>
+                    <tr><td>Address: </td><td><br><textarea name="mytext"  cols="5" rows="1"></textarea></td></tr>
+                <tr><td>Submit: </td><td><input type="submit" value="Submit now"  onclick="display()" style="background-color:burlywood"></td></tr>
+                <tr></tr><td>Reset: </td><td><input type="reset" value="Reset now"  onclick="display()" style="background-color:burlywood"></td></tr>
+                    </table>
+            </form>
+        </center>
+    </body>
+</html>
